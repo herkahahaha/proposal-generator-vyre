@@ -79,7 +79,8 @@
                 children: {
                     smm: false,
                     website: false,
-                    event: false
+                    event: false,
+                    digitalProduction: false,
                 },
                 content: {
                     smm: {
@@ -102,6 +103,12 @@
                             { title: 'Webinar Series', desc: 'Educational content to build authority and leads.' },
                             { title: 'Hybrid Experience', desc: 'Bridging physical and digital brand interactions.' }
                         ]
+                    },
+                    digitalProduction: {
+                        items: [
+                            { title: 'Product Catalog Assets', desc: 'Foto produk katalog (latar putih/bersih) untuk e-commerce.'},
+                            { title: 'Hard-Selling Video', desc: 'Video iklan pendek (15s) fokus ke promo & call-to-action.' }
+                        ]
                     }
                 }
             },
@@ -111,7 +118,8 @@
                 children: {
                     smm: false,
                     website: false,
-                    event: false
+                    event: false,
+                    production: false,
                 },
                 content: {
                     smm: {
@@ -136,6 +144,12 @@
                             { title: 'Masterclass Series', desc: 'Workshop eksklusif untuk target market.' },
                             { title: 'Award Submission', desc: 'Positioning sebagai industry leader.' }
                         ]
+                    },
+                    digitalProduction: {
+                        items: [
+                            { title: 'Cinematic Company Profile', desc: 'Video profil perusahaan gaya dokumenter/film.' },
+                            { title: 'Documentary/Interview', desc: 'Video wawancara CEO atau sejarah perusahaan.' }
+                        ]
                     }
                 }
             },
@@ -145,7 +159,8 @@
                 children: {
                     smm: false,
                     website: false,
-                    event: false
+                    event: false,
+                    production: false,
                 },
                 content: {
                     smm: {
@@ -167,6 +182,12 @@
                             { title: 'Pop-up Store', desc: 'Temporary physical presence di strategic locations.' },
                             { title: 'Community Meetup', desc: 'Regular gathering dengan customers.' },
                             { title: 'Open House', desc: 'Factory/office tour untuk transparency.' }
+                        ]
+                    },
+                    digitalProduction: {
+                        items: [
+                            { title: 'Tutorial/How-To', desc: 'Video cara pakai produk yang simpel.' },
+                            { title: 'Explainer Animation', desc: 'Video animasi untuk menjelaskan fitur rumit jadi mudah.' },
                         ]
                     }
                 }
@@ -321,15 +342,16 @@
             <div class="space-y-4">
               <div class="space-y-2">
                 <label
-                  class="flex items-center gap-2 text-[10px] font-bold text-blue-400 uppercase tracking-tighter cursor-pointer"
+                  class="flex items-center gap-2 text-sm font-bold text-slate-50 tracking-tighter cursor-pointer"
                 >
                   <input
                     type="checkbox"
                     class="rounded bg-slate-800 border-slate-700 text-blue-500 focus:ring-0"
                     x-model="client.objectives.newRevenue.enabled"
                   />
-                  1. New Revenue Stream
+               New Revenue Stream 
                 </label>
+                <span class="text-[10px] text-gray-400">(Goal: Jualan, Omzet, Konversi, Leads)</span>
                 <div class="space-y-1 pl-2" x-show="client.objectives.newRevenue.enabled" x-transition>
                   <label
                     class="flex items-center gap-2 text-xs text-gray-400 hover:text-white cursor-pointer"
@@ -361,19 +383,30 @@
                     />
                     1.3 Event
                   </label>
+                  <label
+                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-white cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      class="rounded bg-slate-800 border-slate-700 text-blue-500 focus:ring-0"
+                      x-model="client.objectives.newRevenue.children.digitalProduction"
+                    />
+                    1.4 Digital Production
+                  </label>
                 </div>
               </div>
               <div class="space-y-2">
                 <label
-                  class="flex items-center gap-2 text-[10px] font-bold text-blue-400 uppercase tracking-tighter cursor-pointer"
+                  class="flex items-center gap-2 text-sm font-bold text-slate-50 tracking-tighter cursor-pointer"
                 >
                   <input
                     type="checkbox"
                     class="rounded bg-slate-800 border-slate-700 text-blue-500 focus:ring-0"
                     x-model="client.objectives.digitalAuthority.enabled"
                   />
-                  2. Digital Authority
+                  Digital Authority 
                 </label>
+                <span class="text-[10px] text-gray-400">(Goal:  Kredibilitas, Ranking 1 Google, Branding Premium, Trust)</span>
                 <div class="space-y-1 pl-2" x-show="client.objectives.digitalAuthority.enabled" x-transition>
                   <label
                     class="flex items-center gap-2 text-xs text-gray-400 hover:text-white cursor-pointer"
@@ -405,19 +438,30 @@
                     />
                     2.3 Event
                   </label>
+                  <label
+                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-white cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      class="rounded bg-slate-800 border-slate-700 text-blue-500 focus:ring-0"
+                      x-model="client.objectives.digitalAuthority.children.digitalProduction"
+                    />
+                    2.4 Digital Production
+                  </label>
                 </div>
               </div>
               <div class="space-y-2">
                 <label
-                  class="flex items-center gap-2 text-[10px] font-bold text-blue-400 uppercase tracking-tighter cursor-pointer"
+                  class="flex items-center gap-2 text-sm font-bold text-slate-50 tracking-tighter cursor-pointer"
                 >
                   <input
                     type="checkbox"
                     class="rounded bg-slate-800 border-slate-700 text-blue-500 focus:ring-0"
                     x-model="client.objectives.accessibility.enabled"
                   />
-                  3. Accessibility
+                  Accessibility
                 </label>
+                <span class="text-[10px] text-gray-400">(Goal: Viral, Jangkauan Luas, Mudah Ditemukan/Diakses)</span>
                 <div class="space-y-1 pl-2" x-show="client.objectives.accessibility.enabled" x-transition>
                   <label
                     class="flex items-center gap-2 text-xs text-gray-400 hover:text-white cursor-pointer"
@@ -448,6 +492,16 @@
                       x-model="client.objectives.accessibility.children.event"
                     />
                     3.3 Event
+                  </label>
+                  <label
+                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-white cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      class="rounded bg-slate-800 border-slate-700 text-blue-500 focus:ring-0"
+                      x-model="client.objectives.accessibility.children.digitalProduction"
+                    />
+                    3.4 Digital Production
                   </label>
                 </div>
               </div>
@@ -500,11 +554,10 @@
               </p>
               <p class="text-slate-800 font-bold">Vyre Digital Agency</p>
               <p class="text-slate-500 text-sm">Jakarta, Indonesia</p>
+              <a href="https://vyreagency.id" target="_blank" class="text-red-600 hover:underline">www.vyreagency.id</a>
             </div>
             <div class="text-right">
-              <h2 class="text-3xl font-bold text-slate-900 tracking-tighter">
-                VYRE<span class="text-blue-600">DIGITAL</span>
-              </h2>
+              <img src="logo.png" alt="VYRE DIGITAL" class="h-12 ml-auto">
             </div>
           </div>
         </div>
@@ -612,11 +665,11 @@
                 <span x-text="client.objectives[objKey].label"></span>
               </h3>
               <div class="grid gap-4" :class="
-                (client.objectives[objKey].children.smm && client.objectives[objKey].children.website && client.objectives[objKey].children.event) ? 'grid-cols-3' :
-                ((client.objectives[objKey].children.smm && client.objectives[objKey].children.website) || 
-                 (client.objectives[objKey].children.smm && client.objectives[objKey].children.event) || 
-                 (client.objectives[objKey].children.website && client.objectives[objKey].children.event)) ? 'grid-cols-2' : 
-                'grid-cols-1'
+                (() => {
+                  const children = client.objectives[objKey].children;
+                  const count = [children.smm, children.website, children.event, children.digitalProduction].filter(Boolean).length;
+                  return count === 4 ? 'grid-cols-4' : count === 3 ? 'grid-cols-3' : count === 2 ? 'grid-cols-2' : 'grid-cols-1';
+                })()
               ">
                 <!-- SMM -->
                 <div
@@ -673,6 +726,27 @@
                   <h4 class="font-bold text-slate-900 mb-3">Event</h4>
                   <ul class="space-y-3">
                     <template x-for="item in client.objectives[objKey].content.event.items" :key="item.title">
+                      <li class="text-[11px] text-slate-600 leading-relaxed">
+                        <span class="font-bold text-slate-800 block" x-text="item.title"></span>
+                        <span x-text="item.desc"></span>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+
+                <!-- Digital Production -->
+                <div
+                  x-show="client.objectives[objKey].children.digitalProduction"
+                  class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm"
+                >
+                  <div
+                    class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
+                  >
+                    <i class="fas fa-industry text-blue-600"></i>
+                  </div>
+                  <h4 class="font-bold text-slate-900 mb-3">Digital Production</h4>
+                  <ul class="space-y-3">
+                    <template x-for="item in client.objectives[objKey].content.digitalProduction.items" :key="item.title">
                       <li class="text-[11px] text-slate-600 leading-relaxed">
                         <span class="font-bold text-slate-800 block" x-text="item.title"></span>
                         <span x-text="item.desc"></span>
